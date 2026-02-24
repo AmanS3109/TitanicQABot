@@ -1,3 +1,4 @@
+import os
 import base64
 import requests
 import streamlit as st
@@ -10,7 +11,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-BACKEND_URL = "http://localhost:8000"
+# Read backend URL from environment or default to localhost
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # ── Custom CSS ──────────────────────────────────────────────────
 st.markdown("""
