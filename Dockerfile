@@ -20,8 +20,8 @@ COPY . .
 # Run data preparation
 RUN python prepare_data.py
 
-# Expose ports (FastAPI on 8000, Streamlit on 8501)
-EXPOSE 8000 8501
+# Expose FastAPI internal port (Streamlit uses $PORT from Render)
+EXPOSE 8000
 
 # Set environment variables
 ENV BACKEND_URL=http://localhost:8000
